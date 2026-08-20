@@ -1,4 +1,5 @@
 import cv2
+from hand_tracker import detectar_mao
 
 camera = cv2.VideoCapture(0)
 
@@ -7,6 +8,8 @@ while True:
 
     if not sucesso:
         break
+
+    frame = detectar_mao(frame)
 
     cv2.imshow("Webcam", frame)
 
